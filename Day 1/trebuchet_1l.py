@@ -1,0 +1,2 @@
+from re import match as mc
+print( sum( map ( lambda m : int(m[0].group(1)+m[0].group(2)) if m[0] else (int(m[1].group(1)*2) if m[1] else 0), [(mc(r'^\D*(\d).*(\d)\D*$', l), mc(r'^\D*(\d)\D*$', l)) for l in open('input.txt', 'r').readlines()]) ) )
