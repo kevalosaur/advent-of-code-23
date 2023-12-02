@@ -1,3 +1,3 @@
 from re import match as mc
-cc = lambda ns : 10*(ds := {'0':0,'1':1,'2':2,'3':3,'4':4,'5': 5,'6':6,'7':7,'8':8,'9':9,'one':1,'two': 2,'three':3,'four':4,'five': 5,'six': 6,'seven': 7,'eight':8,'nine':9})[ns[0]] + ds[ns[1]]
+cc = lambda ns:10*(ds:=lambda d:int(d) if len(d)==1 else {'one':1,'two':2,'three':3,'four':4,'five':5,'six':6,'seven':7,'eight':8,'nine':9}[d])(ns[0])+ds(ns[1])
 print( sum( map( lambda m : cc((m[1].group(1), m[1].group(2))) if m[1] else cc((m[2].group(1), m[2].group(1))) if m[2] else 0, [(a:=r'|'.join([r'\d', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']), mc(f'^.*?({a}).*({a})(?!{a}).*$', l), mc(f'^.*?({a})(?!{a}).*$', l)) for l in  open('input.txt', 'r').readlines()] ) ) )
