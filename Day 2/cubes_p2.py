@@ -1,4 +1,4 @@
-from re import match, search
+from re import search
 
 tot = 0
 for l in open('input.txt', 'r').readlines():

@@ -1,4 +1,4 @@
-from re import match, search
+from re import search
 
 tot = 0
 i = 1

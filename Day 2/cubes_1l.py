@@ -1,0 +1,2 @@
+from re import search as s
+print(sum([(i+1 if (all([all(((int(r.group(1)) if (r:=s(r'(\d+)red',t)) else 0)<=12,(int(g.group(1)) if (g:=s(r'(\d+)green',t)) else 0)<=13,(int(b.group(1)) if (b:=s(r'(\d+)blue',t)) else 0)<=14)) for t in l[l.index(':')+1:].replace(' ','').split(';')]) ) else 0) for i,l in enumerate(open('input.txt', 'r').readlines())]))

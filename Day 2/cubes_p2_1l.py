@@ -1,0 +1,2 @@
+from math import prod as p; from re import search as s
+print(sum([p(max(e) for e in zip(*[((int(s(r'(\d+)red',t).group(1)) if s(r'\d+red',t) else 0, int(s(r'(\d+)green',t).group(1)) if s(r'\d+green',t) else 0, int(s(r'(\d+)blue',t).group(1)) if s(r'\d+blue',t) else 0)) for t in l[l.index(':')+1:].replace(' ','').split(';')])) for l in open('input.txt','r').readlines()]))
