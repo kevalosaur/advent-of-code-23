@@ -1,0 +1,2 @@
+from math import floor as f; from re import findall as a
+print(sum([(lambda n:f(pow(2,len(n[0].intersection(n[1]))-1)))([set(a(r'\d+', x)) for x in l[l.index(':')+2:].split('|')]) for l in open('input.txt','r').readlines()]))
